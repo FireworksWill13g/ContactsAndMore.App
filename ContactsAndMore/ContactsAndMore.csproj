@@ -84,6 +84,16 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interface\IActive.cs" />
+    <Compile Include="Migrations\201706060038101_InitialCreate.cs" />
+    <Compile Include="Migrations\201706060038101_InitialCreate.Designer.cs">
+      <DependentUpon>201706060038101_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706142236352_Persons.cs" />
+    <Compile Include="Migrations\201706142236352_Persons.Designer.cs">
+      <DependentUpon>201706142236352_Persons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +107,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706060038101_InitialCreate.resx">
+      <DependentUpon>201706060038101_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706142236352_Persons.resx">
+      <DependentUpon>201706142236352_Persons.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

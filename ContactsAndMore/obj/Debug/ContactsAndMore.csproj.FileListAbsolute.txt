@@ -36,3 +36,23 @@ C:\Users\wwend\OneDrive\Programming\ContactsAndMore.App\ContactsAndMore\obj\Debu
 C:\Users\wwend\OneDrive\Programming\ContactsAndMore.App\ContactsAndMore\obj\Debug\ContactsAndMore.csproj.GenerateResource.Cache
 C:\Users\wwend\OneDrive\Programming\ContactsAndMore.App\ContactsAndMore\obj\Debug\ContactsAndMore.exe
 C:\Users\wwend\OneDrive\Programming\ContactsAndMore.App\ContactsAndMore\obj\Debug\ContactsAndMore.pdb
+C:\Users\William\Documents\Visual Studio 2015\Projects\ContactsAndMore.App-master\ContactsAndMore\bin\Debug\ContactsAndMore.exe.config
+C:\Users\William\Documents\Visual Studio 2015\Projects\ContactsAndMore.App-master\ContactsAndMore\obj\Debug\ContactsAndMore.exe
+C:\Users\William\Documents\Visual Studio 2015\Projects\ContactsAndMore.App-master\ContactsAndMore\obj\Debug\ContactsAndMore.pdb
+C:\Users\William\Documents\Visual Studio 2015\Projects\ContactsAndMore.App-master\ContactsAndMore\obj\Debug\ContactsAndMore.csprojResolveAssemblyReference.cache
+C:\Users\William\Documents\Visual Studio 2015\Projects\ContactsAndMore.App-master\ContactsAndMore\obj\Debug\ContactsAndMore.Form1.resources
+C:\Users\William\Documents\Visual Studio 2015\Projects\ContactsAndMore.App-master\ContactsAndMore\obj\Debug\ContactsAndMore.Form2.resources
+C:\Users\William\Documents\Visual Studio 2015\Projects\ContactsAndMore.App-master\ContactsAndMore\obj\Debug\ContactsAndMore.Properties.Resources.resources
+C:\Users\William\Documents\Visual Studio 2015\Projects\ContactsAndMore.App-master\ContactsAndMore\obj\Debug\ContactsAndMore.csproj.GenerateResource.Cache
+C:\Users\William\Documents\Visual Studio 2015\Projects\ContactsAndMore.App-master\ContactsAndMore\bin\Debug\ContactsAndMore.exe
+C:\Users\William\Documents\Visual Studio 2015\Projects\ContactsAndMore.App-master\ContactsAndMore\bin\Debug\ContactsAndMore.pdb
+C:\Users\William\Documents\Visual Studio 2015\Projects\ContactsAndMore.App-master\ContactsAndMore\bin\Debug\EntityFramework.dll
+C:\Users\William\Documents\Visual Studio 2015\Projects\ContactsAndMore.App-master\ContactsAndMore\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\William\Documents\Visual Studio 2015\Projects\ContactsAndMore.App-master\ContactsAndMore\bin\Debug\System.Data.SQLite.dll
+C:\Users\William\Documents\Visual Studio 2015\Projects\ContactsAndMore.App-master\ContactsAndMore\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\William\Documents\Visual Studio 2015\Projects\ContactsAndMore.App-master\ContactsAndMore\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\William\Documents\Visual Studio 2015\Projects\ContactsAndMore.App-master\ContactsAndMore\bin\Debug\EntityFramework.xml
+C:\Users\William\Documents\Visual Studio 2015\Projects\ContactsAndMore.App-master\ContactsAndMore\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\William\Documents\Visual Studio 2015\Projects\ContactsAndMore.App-master\ContactsAndMore\bin\Debug\System.Data.SQLite.xml
+C:\Users\wwend\OneDrive\Programming\ContactsAndMore.App\ContactsAndMore\obj\Debug\ContactsAndMore.Migrations.InitialCreate.resources
+C:\Users\wwend\OneDrive\Programming\ContactsAndMore.App\ContactsAndMore\obj\Debug\ContactsAndMore.Migrations.Persons.resources

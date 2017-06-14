@@ -35,7 +35,9 @@
             this.LName = new System.Windows.Forms.Label();
             this.e_mail = new System.Windows.Forms.TextBox();
             this.eMail = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.peopleDataGridView = new System.Windows.Forms.DataGridView();
+            this.peopleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._ContactsAndMore_ContactsSqliteDBDataSet = new ContactsAndMore._ContactsAndMore_ContactsSqliteDBDataSet();
             this.addToDb = new System.Windows.Forms.Button();
             this.del = new System.Windows.Forms.Button();
             this.loadBtn = new System.Windows.Forms.Button();
@@ -43,17 +45,21 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.contactsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentCalculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this._ContactsAndMore_ContactsSqliteDBDataSet = new ContactsAndMore._ContactsAndMore_ContactsSqliteDBDataSet();
-            this.peopleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.peopleTableAdapter = new ContactsAndMore._ContactsAndMore_ContactsSqliteDBDataSetTableAdapters.PeopleTableAdapter();
+            this.contactsAndMoreContactsSqliteDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.peopleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.peopleBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.personIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._ContactsAndMore_ContactsSqliteDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peopleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._ContactsAndMore_ContactsSqliteDBDataSet)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.contactsAndMoreContactsSqliteDBDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // FirstName
@@ -63,7 +69,7 @@
             this.FirstName.MaxLength = 50;
             this.FirstName.Name = "FirstName";
             this.FirstName.Size = new System.Drawing.Size(153, 34);
-            this.FirstName.TabIndex = 0;
+            this.FirstName.TabIndex = 2;
             this.FirstName.TextChanged += new System.EventHandler(this.FirstName_TextChanged);
             // 
             // fName
@@ -83,7 +89,7 @@
             this.LastName.Margin = new System.Windows.Forms.Padding(6);
             this.LastName.Name = "LastName";
             this.LastName.Size = new System.Drawing.Size(153, 34);
-            this.LastName.TabIndex = 2;
+            this.LastName.TabIndex = 4;
             // 
             // LName
             // 
@@ -102,8 +108,8 @@
             this.e_mail.Margin = new System.Windows.Forms.Padding(6);
             this.e_mail.Name = "e_mail";
             this.e_mail.Size = new System.Drawing.Size(153, 34);
-            this.e_mail.TabIndex = 4;
-            this.e_mail.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.e_mail.TabIndex = 6;
+            this.e_mail.TextChanged += new System.EventHandler(this.e_mail_TextChanged);
             // 
             // eMail
             // 
@@ -116,20 +122,34 @@
             this.eMail.TabIndex = 5;
             this.eMail.Text = "EMail";
             // 
-            // dataGridView1
+            // peopleDataGridView
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.peopleDataGridView.AllowUserToDeleteRows = false;
+            this.peopleDataGridView.AutoGenerateColumns = false;
+            this.peopleDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.peopleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.peopleDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.personIDDataGridViewTextBoxColumn,
             this.firstNameDataGridViewTextBoxColumn,
             this.lastNameDataGridViewTextBoxColumn,
             this.personEmailDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.peopleBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(94, 319);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(724, 298);
-            this.dataGridView1.TabIndex = 6;
+            this.peopleDataGridView.DataSource = this.peopleBindingSource;
+            this.peopleDataGridView.Location = new System.Drawing.Point(94, 319);
+            this.peopleDataGridView.Name = "peopleDataGridView";
+            this.peopleDataGridView.Size = new System.Drawing.Size(724, 298);
+            this.peopleDataGridView.TabIndex = 6;
+            this.peopleDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.peopleDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
+            // 
+            // peopleBindingSource
+            // 
+            this.peopleBindingSource.DataMember = "People";
+            this.peopleBindingSource.DataSource = this._ContactsAndMore_ContactsSqliteDBDataSet;
+            // 
+            // _ContactsAndMore_ContactsSqliteDBDataSet
+            // 
+            this._ContactsAndMore_ContactsSqliteDBDataSet.DataSetName = "_ContactsAndMore_ContactsSqliteDBDataSet";
+            this._ContactsAndMore_ContactsSqliteDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // addToDb
             // 
@@ -161,6 +181,7 @@
             this.loadBtn.TabIndex = 9;
             this.loadBtn.Text = "Load";
             this.loadBtn.UseVisualStyleBackColor = false;
+            this.loadBtn.Click += new System.EventHandler(this.loadBtn_Click);
             // 
             // updateBtn
             // 
@@ -171,6 +192,7 @@
             this.updateBtn.TabIndex = 10;
             this.updateBtn.Text = "Update";
             this.updateBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // menuStrip1
             // 
@@ -196,19 +218,24 @@
             this.paymentCalculatorToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
             this.paymentCalculatorToolStripMenuItem.Text = "Payment Calculator";
             // 
-            // _ContactsAndMore_ContactsSqliteDBDataSet
-            // 
-            this._ContactsAndMore_ContactsSqliteDBDataSet.DataSetName = "_ContactsAndMore_ContactsSqliteDBDataSet";
-            this._ContactsAndMore_ContactsSqliteDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // peopleBindingSource
-            // 
-            this.peopleBindingSource.DataMember = "People";
-            this.peopleBindingSource.DataSource = this._ContactsAndMore_ContactsSqliteDBDataSet;
-            // 
             // peopleTableAdapter
             // 
             this.peopleTableAdapter.ClearBeforeFill = true;
+            // 
+            // contactsAndMoreContactsSqliteDBDataSetBindingSource
+            // 
+            this.contactsAndMoreContactsSqliteDBDataSetBindingSource.DataSource = this._ContactsAndMore_ContactsSqliteDBDataSet;
+            this.contactsAndMoreContactsSqliteDBDataSetBindingSource.Position = 0;
+            // 
+            // peopleBindingSource1
+            // 
+            this.peopleBindingSource1.DataMember = "People";
+            this.peopleBindingSource1.DataSource = this.contactsAndMoreContactsSqliteDBDataSetBindingSource;
+            // 
+            // peopleBindingSource2
+            // 
+            this.peopleBindingSource2.DataMember = "People";
+            this.peopleBindingSource2.DataSource = this._ContactsAndMore_ContactsSqliteDBDataSet;
             // 
             // personIDDataGridViewTextBoxColumn
             // 
@@ -216,24 +243,28 @@
             this.personIDDataGridViewTextBoxColumn.HeaderText = "PersonID";
             this.personIDDataGridViewTextBoxColumn.Name = "personIDDataGridViewTextBoxColumn";
             this.personIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.personIDDataGridViewTextBoxColumn.Visible = false;
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
             this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
             this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
             this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.Width = 154;
             // 
             // lastNameDataGridViewTextBoxColumn
             // 
             this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
             this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
             this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.Width = 151;
             // 
             // personEmailDataGridViewTextBoxColumn
             // 
             this.personEmailDataGridViewTextBoxColumn.DataPropertyName = "PersonEmail";
             this.personEmailDataGridViewTextBoxColumn.HeaderText = "PersonEmail";
             this.personEmailDataGridViewTextBoxColumn.Name = "personEmailDataGridViewTextBoxColumn";
+            this.personEmailDataGridViewTextBoxColumn.Width = 180;
             // 
             // Form1
             // 
@@ -244,7 +275,7 @@
             this.Controls.Add(this.loadBtn);
             this.Controls.Add(this.del);
             this.Controls.Add(this.addToDb);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.peopleDataGridView);
             this.Controls.Add(this.eMail);
             this.Controls.Add(this.e_mail);
             this.Controls.Add(this.LName);
@@ -259,11 +290,14 @@
             this.Name = "Form1";
             this.Text = "Contacts";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peopleDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._ContactsAndMore_ContactsSqliteDBDataSet)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._ContactsAndMore_ContactsSqliteDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactsAndMoreContactsSqliteDBDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,7 +311,7 @@
         private System.Windows.Forms.Label LName;
         private System.Windows.Forms.TextBox e_mail;
         private System.Windows.Forms.Label eMail;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView peopleDataGridView;
         private System.Windows.Forms.Button addToDb;
         private System.Windows.Forms.Button del;
         private System.Windows.Forms.Button loadBtn;
@@ -288,6 +322,9 @@
         private _ContactsAndMore_ContactsSqliteDBDataSet _ContactsAndMore_ContactsSqliteDBDataSet;
         private System.Windows.Forms.BindingSource peopleBindingSource;
         private _ContactsAndMore_ContactsSqliteDBDataSetTableAdapters.PeopleTableAdapter peopleTableAdapter;
+        private System.Windows.Forms.BindingSource contactsAndMoreContactsSqliteDBDataSetBindingSource;
+        private System.Windows.Forms.BindingSource peopleBindingSource1;
+        private System.Windows.Forms.BindingSource peopleBindingSource2;
         private System.Windows.Forms.DataGridViewTextBoxColumn personIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;

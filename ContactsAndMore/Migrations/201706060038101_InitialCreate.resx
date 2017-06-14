@@ -117,28 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="peopleBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>515, 17</value>
-  </metadata>
-  <metadata name="_ContactsAndMore_ContactsSqliteDBDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>152, 17</value>
-  </metadata>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="peopleTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>717, 17</value>
-  </metadata>
-  <metadata name="contactsAndMoreContactsSqliteDBDataSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 60</value>
-  </metadata>
-  <metadata name="peopleBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>464, 60</value>
-  </metadata>
-  <metadata name="peopleBindingSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>675, 60</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>31</value>
-  </metadata>
+  <data name="Target" xml:space="preserve">
+    <value>H4sIAAAAAAAEAM1X227jNhB9L9B/EPjUAlkzl5c2kHfh2ElhNE6MVXbfaWnsEOVFFakg/rZ96Cf1FzrUXZTt2LuLtvCLTM2cOTOcm/7+8lf44VWK4AUyw7Uak4vROQlAxTrhajMmuV2/+4V8eP/jD+FtIl+Dz7XclZNDTWXG5Nna9JpSEz+DZGYkeZxpo9d2FGtJWaLp5fn5r/TiggJCEMQKgvBjriyXUPzBv1OtYkhtzsRCJyBMdY5vogI1eGASTMpiGBOUtSy2ZqKShc6ABBPBGdKIQKxJwJTSllkkef3JQGQzrTZRigdMPG1TQLk1EwYq8tet+LF+nF86P2irWEPFubFangh4cVUFhvrqXxVe0gQOQ3eLIbZb53URvjFZ4u05YN/U9VRkTmwQ21GpcRZ452dNImC+uB9K5MLmGYwV5DZj4ixY5ivB499h+6T/ADVWuRBddsgP3/UO8GiZ6RQyu/0I6x7n+YwEtK9NffVGeaBZ+jZX9uqSBA9IhK0ENInQiUNk0bnfQEHGLCRLZi1keI/zBIpQDjh4Fiex5S9Q27vRWgBTOyweRrnjmbHusQbCJMZiJMGCvd6D2tjnMcFHEtzxV0jqkwr6k+JYu6hks/xNS/fsXzJUXsWtZFx8Z1shbbN8mPtF2nK8zopHncbRn4JbmN3sKAVsGlU1mMpe37MSOALbc82QoOVRtqJRXW276DbE2kZHy05Xd0S6pyWGC5amGLlOi6xOgqjqj++i03uHLDFobHa0kIZtYwnrhG3Ae+vim0CRvjNm2Yq5u5smcoeYdw17Qlyb60fa7xlt4Gt599y/8H4/8yHaGN6hWxKLvfAQGiJN6xwoFhOKCZbtbT5TLXKpDjezQ0h1U+ni1GfHo3SaSheoc3w8Vts2ulDt6fFIvb4wDFT1YogXUu++/Jygg6TwhoefY4dq1BdprDe16tVkWNXHMbuMVzClCAkwUC88ccUSbY0FOXICIyyYqeDobyuwYIqvwdhyyhLcKC69jej/s51QYxJx1Iryny4K3MX3zVXgxKne3w1W3H77XqBeWBY/s+wnyV5/7sJ9zez/JrAd8/0EvFNnuD9jjhnQB+ZzWXJjkqw0ki9JLkGnYg/NI2b3sP5D2v3iCWdg+KaFcN8/CmJXWC1oLTNXa13HG93qMqpFvOtYgGUJRmeSWb7G8YevYzCm2Lc+M5GjyK1cQTJXj7lNczsxBuRK9PbbkB62Xywofc7hY+r+me/hAtLk6AI8qpuci6ThfTeslH0QLlGqAkZWuG8i3GbbID1odSRQFb4ZpKBc+T+BTAWCmUcVMVfTp3PDLfMeNize1m18P8jbF9EPezjjbJMxaSqMVt99xVP3Gf/+H9yp/tn4DwAA</value>
+  </data>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
+  </data>
 </root>
