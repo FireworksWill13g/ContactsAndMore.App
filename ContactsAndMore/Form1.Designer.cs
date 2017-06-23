@@ -244,6 +244,7 @@
             this.personIDDataGridViewTextBoxColumn.Name = "personIDDataGridViewTextBoxColumn";
             this.personIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.personIDDataGridViewTextBoxColumn.Visible = false;
+            this.personIDDataGridViewTextBoxColumn.Width = 142;
             // 
             // firstNameDataGridViewTextBoxColumn
             // 

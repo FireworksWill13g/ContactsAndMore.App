@@ -36,7 +36,7 @@ namespace ContactsAndMore
 
         private void FirstName_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void e_mail_TextChanged(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace ContactsAndMore
 
             };
 
-            using (var ctx = new ContactsSqliteDB()) 
+            using (var ctx = new ContactsSqliteDB())
             {
                 ctx.Persons.Add(person);
                 ctx.SaveChanges();
@@ -88,14 +88,45 @@ namespace ContactsAndMore
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 1)
-            {
-                var personID = (string)peopleDataGridView.Rows[e.RowIndex].Cells[0].Value;
-                var firstName = (string)peopleDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
-                var lastName = (string)peopleDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
 
-                //Need to put code here to change items in the database, see Crud update on Udemy course
+            // Need to make a method that grabe the changed column and set that up for change only instead of updating all 
+
+
+            var personID = (int)peopleDataGridView.Rows[e.RowIndex].Cells[0].Value;  //casting this as a int
+            UpDateChanges(e.ColumnIndex, e.RowIndex, personID);
+        }
+        
+        void UpDateChanges(int ColumnIndex,int RowIndex, int personID)
+        {
+            using (var ctx = new ContactsSqliteDB())
+            {
+                var person = ctx.Persons.SingleOrDefault(p => p.PersonID == personID);
+
+                if (person != null && ColumnIndex == 1)
+                {
+                    var firstName = (string)peopleDataGridView.Rows[RowIndex].Cells[ColumnIndex].Value;
+                    person.FirstName = firstName;
+                }
+                else if (person != null && ColumnIndex == 2)
+                {
+                    var lastName = (string)peopleDataGridView.Rows[RowIndex].Cells[ColumnIndex].Value;
+                    person.LastName = lastName;
+                }
+                else if (person != null && ColumnIndex == 3)
+                {
+                    var personEmail = (string)peopleDataGridView.Rows[RowIndex].Cells[ColumnIndex].Value;
+                    person.PersonEmail = personEmail;
+                }
+
+                ctx.SaveChanges();
+                var result = ctx.SaveChanges();
+
+                MessageBox.Show(string.Format("{0}'s info has updated to {1}", person.FirstName, result));
+                GetLists();
+
             }
+
         }
     }
 }
+
