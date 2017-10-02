@@ -36,6 +36,10 @@
             this.e_mail = new System.Windows.Forms.TextBox();
             this.eMail = new System.Windows.Forms.Label();
             this.peopleDataGridView = new System.Windows.Forms.DataGridView();
+            this.personIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.peopleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._ContactsAndMore_ContactsSqliteDBDataSet = new ContactsAndMore._ContactsAndMore_ContactsSqliteDBDataSet();
             this.addToDb = new System.Windows.Forms.Button();
@@ -45,14 +49,23 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.contactsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentCalculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calculateMonthlyPaymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calculateLoanAmountFromDesiredMonthlyPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.peopleTableAdapter = new ContactsAndMore._ContactsAndMore_ContactsSqliteDBDataSetTableAdapters.PeopleTableAdapter();
             this.contactsAndMoreContactsSqliteDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.peopleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.peopleBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.personIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.personEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CalMoPayPanel = new System.Windows.Forms.Panel();
+            this.Clear = new System.Windows.Forms.Button();
+            this.Calculate = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.LoanAmount = new System.Windows.Forms.ComboBox();
+            this.APR = new System.Windows.Forms.ComboBox();
+            this.LTerm = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.monthlyAmount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.peopleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._ContactsAndMore_ContactsSqliteDBDataSet)).BeginInit();
@@ -60,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.contactsAndMoreContactsSqliteDBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource2)).BeginInit();
+            this.CalMoPayPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // FirstName
@@ -141,6 +155,36 @@
             this.peopleDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.peopleDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
+            // personIDDataGridViewTextBoxColumn
+            // 
+            this.personIDDataGridViewTextBoxColumn.DataPropertyName = "PersonID";
+            this.personIDDataGridViewTextBoxColumn.HeaderText = "PersonID";
+            this.personIDDataGridViewTextBoxColumn.Name = "personIDDataGridViewTextBoxColumn";
+            this.personIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.personIDDataGridViewTextBoxColumn.Visible = false;
+            this.personIDDataGridViewTextBoxColumn.Width = 142;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.Width = 154;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.Width = 151;
+            // 
+            // personEmailDataGridViewTextBoxColumn
+            // 
+            this.personEmailDataGridViewTextBoxColumn.DataPropertyName = "PersonEmail";
+            this.personEmailDataGridViewTextBoxColumn.HeaderText = "PersonEmail";
+            this.personEmailDataGridViewTextBoxColumn.Name = "personEmailDataGridViewTextBoxColumn";
+            this.personEmailDataGridViewTextBoxColumn.Width = 180;
+            // 
             // peopleBindingSource
             // 
             this.peopleBindingSource.DataMember = "People";
@@ -211,12 +255,29 @@
             this.contactsToolStripMenuItem.Name = "contactsToolStripMenuItem";
             this.contactsToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
             this.contactsToolStripMenuItem.Text = "Contacts";
+            this.contactsToolStripMenuItem.Click += new System.EventHandler(this.contactsToolStripMenuItem_Click);
             // 
             // paymentCalculatorToolStripMenuItem
             // 
+            this.paymentCalculatorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.calculateMonthlyPaymentsToolStripMenuItem,
+            this.calculateLoanAmountFromDesiredMonthlyPaymentToolStripMenuItem});
             this.paymentCalculatorToolStripMenuItem.Name = "paymentCalculatorToolStripMenuItem";
             this.paymentCalculatorToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
             this.paymentCalculatorToolStripMenuItem.Text = "Payment Calculator";
+            // 
+            // calculateMonthlyPaymentsToolStripMenuItem
+            // 
+            this.calculateMonthlyPaymentsToolStripMenuItem.Name = "calculateMonthlyPaymentsToolStripMenuItem";
+            this.calculateMonthlyPaymentsToolStripMenuItem.Size = new System.Drawing.Size(445, 26);
+            this.calculateMonthlyPaymentsToolStripMenuItem.Text = "Calculate Monthly Payments";
+            this.calculateMonthlyPaymentsToolStripMenuItem.Click += new System.EventHandler(this.calculateMonthlyPaymentsToolStripMenuItem_Click);
+            // 
+            // calculateLoanAmountFromDesiredMonthlyPaymentToolStripMenuItem
+            // 
+            this.calculateLoanAmountFromDesiredMonthlyPaymentToolStripMenuItem.Name = "calculateLoanAmountFromDesiredMonthlyPaymentToolStripMenuItem";
+            this.calculateLoanAmountFromDesiredMonthlyPaymentToolStripMenuItem.Size = new System.Drawing.Size(445, 26);
+            this.calculateLoanAmountFromDesiredMonthlyPaymentToolStripMenuItem.Text = "Calculate Loan amount from Desired Monthly Payment";
             // 
             // peopleTableAdapter
             // 
@@ -237,41 +298,144 @@
             this.peopleBindingSource2.DataMember = "People";
             this.peopleBindingSource2.DataSource = this._ContactsAndMore_ContactsSqliteDBDataSet;
             // 
-            // personIDDataGridViewTextBoxColumn
+            // CalMoPayPanel
             // 
-            this.personIDDataGridViewTextBoxColumn.DataPropertyName = "PersonID";
-            this.personIDDataGridViewTextBoxColumn.HeaderText = "PersonID";
-            this.personIDDataGridViewTextBoxColumn.Name = "personIDDataGridViewTextBoxColumn";
-            this.personIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.personIDDataGridViewTextBoxColumn.Visible = false;
-            this.personIDDataGridViewTextBoxColumn.Width = 142;
+            this.CalMoPayPanel.Controls.Add(this.monthlyAmount);
+            this.CalMoPayPanel.Controls.Add(this.Clear);
+            this.CalMoPayPanel.Controls.Add(this.Calculate);
+            this.CalMoPayPanel.Controls.Add(this.label4);
+            this.CalMoPayPanel.Controls.Add(this.LoanAmount);
+            this.CalMoPayPanel.Controls.Add(this.APR);
+            this.CalMoPayPanel.Controls.Add(this.LTerm);
+            this.CalMoPayPanel.Controls.Add(this.label3);
+            this.CalMoPayPanel.Controls.Add(this.label2);
+            this.CalMoPayPanel.Controls.Add(this.label1);
+            this.CalMoPayPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CalMoPayPanel.Location = new System.Drawing.Point(0, 28);
+            this.CalMoPayPanel.Name = "CalMoPayPanel";
+            this.CalMoPayPanel.Size = new System.Drawing.Size(935, 670);
+            this.CalMoPayPanel.TabIndex = 12;
+            this.CalMoPayPanel.Visible = false;
+            this.CalMoPayPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // firstNameDataGridViewTextBoxColumn
+            // Clear
             // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.Width = 154;
+            this.Clear.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Clear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.Clear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Clear.Location = new System.Drawing.Point(260, 319);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(150, 47);
+            this.Clear.TabIndex = 5;
+            this.Clear.Text = "Clear";
+            this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
-            // lastNameDataGridViewTextBoxColumn
+            // Calculate
             // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.Width = 151;
+            this.Calculate.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Calculate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.Calculate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Calculate.Location = new System.Drawing.Point(74, 319);
+            this.Calculate.Name = "Calculate";
+            this.Calculate.Size = new System.Drawing.Size(150, 47);
+            this.Calculate.TabIndex = 4;
+            this.Calculate.Text = "Calculate";
+            this.Calculate.UseVisualStyleBackColor = true;
+            this.Calculate.Click += new System.EventHandler(this.Calculate_Click);
             // 
-            // personEmailDataGridViewTextBoxColumn
+            // label4
             // 
-            this.personEmailDataGridViewTextBoxColumn.DataPropertyName = "PersonEmail";
-            this.personEmailDataGridViewTextBoxColumn.HeaderText = "PersonEmail";
-            this.personEmailDataGridViewTextBoxColumn.Name = "personEmailDataGridViewTextBoxColumn";
-            this.personEmailDataGridViewTextBoxColumn.Width = 180;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(59, 233);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(207, 29);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Monthly Payments";
+            // 
+            // LoanAmount
+            // 
+            this.LoanAmount.FormattingEnabled = true;
+            this.LoanAmount.Location = new System.Drawing.Point(280, 47);
+            this.LoanAmount.Name = "LoanAmount";
+            this.LoanAmount.Size = new System.Drawing.Size(121, 37);
+            this.LoanAmount.TabIndex = 1;
+            this.LoanAmount.SelectedIndexChanged += new System.EventHandler(this.LoanAmount_SelectedIndexChanged);
+            // 
+            // APR
+            // 
+            this.APR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.APR.FormattingEnabled = true;
+            this.APR.Location = new System.Drawing.Point(211, 116);
+            this.APR.Name = "APR";
+            this.APR.Size = new System.Drawing.Size(121, 33);
+            this.APR.TabIndex = 2;
+            this.APR.SelectedIndexChanged += new System.EventHandler(this.APR_SelectedIndexChanged);
+            // 
+            // LTerm
+            // 
+            this.LTerm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LTerm.FormattingEnabled = true;
+            this.LTerm.Items.AddRange(new object[] {
+            "12",
+            "24",
+            "36",
+            "48",
+            "60",
+            "72",
+            "84",
+            "96",
+            "108",
+            "120"});
+            this.LTerm.Location = new System.Drawing.Point(210, 164);
+            this.LTerm.Name = "LTerm";
+            this.LTerm.Size = new System.Drawing.Size(121, 33);
+            this.LTerm.TabIndex = 3;
+            this.LTerm.Text = "Months";
+            this.LTerm.SelectedIndexChanged += new System.EventHandler(this.LTerm_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(59, 167);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(130, 29);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Loan Term";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(59, 110);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 29);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "APR %";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(59, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(215, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Initial Loan Amount";
+            // 
+            // monthlyAmount
+            // 
+            this.monthlyAmount.AutoSize = true;
+            this.monthlyAmount.Location = new System.Drawing.Point(281, 233);
+            this.monthlyAmount.Name = "monthlyAmount";
+            this.monthlyAmount.Size = new System.Drawing.Size(99, 29);
+            this.monthlyAmount.TabIndex = 10;
+            this.monthlyAmount.Text = "$/Month";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(935, 698);
+            this.Controls.Add(this.CalMoPayPanel);
             this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.loadBtn);
             this.Controls.Add(this.del);
@@ -299,6 +463,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.contactsAndMoreContactsSqliteDBDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource2)).EndInit();
+            this.CalMoPayPanel.ResumeLayout(false);
+            this.CalMoPayPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,6 +496,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn personEmailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Panel CalMoPayPanel;
+        private System.Windows.Forms.ComboBox LoanAmount;
+        private System.Windows.Forms.ComboBox APR;
+        private System.Windows.Forms.ComboBox LTerm;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button Clear;
+        private System.Windows.Forms.Button Calculate;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolStripMenuItem calculateMonthlyPaymentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem calculateLoanAmountFromDesiredMonthlyPaymentToolStripMenuItem;
+        private System.Windows.Forms.Label monthlyAmount;
     }
 }
 

@@ -85,6 +85,7 @@
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="Interface\IActive.cs" />
+    <Compile Include="Loan.cs" />
     <Compile Include="Migrations\201706060038101_InitialCreate.cs" />
     <Compile Include="Migrations\201706060038101_InitialCreate.Designer.cs">
       <DependentUpon>201706060038101_InitialCreate.cs</DependentUpon>

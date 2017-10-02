@@ -95,8 +95,8 @@ namespace ContactsAndMore
             var personID = (int)peopleDataGridView.Rows[e.RowIndex].Cells[0].Value;  //casting this as a int
             UpDateChanges(e.ColumnIndex, e.RowIndex, personID);
         }
-        
-        void UpDateChanges(int ColumnIndex,int RowIndex, int personID)
+
+        void UpDateChanges(int ColumnIndex, int RowIndex, int personID)
         {
             using (var ctx = new ContactsSqliteDB())
             {
@@ -127,6 +127,76 @@ namespace ContactsAndMore
             }
 
         }
+        /*Loan Calculation Panel/View */
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void LoanAmount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var _InitLoanAmt = LoanAmount.Text;
+
+        }
+
+        private void APR_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LTerm_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Calculate_Click(object sender, EventArgs e)
+        {
+            string result = CalculateMoPayments();
+            monthlyAmount.Text = result + " /Month";
+            monthlyAmount.Refresh();
+
+        }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            // Some Code to Clear Text from boxes
+            LoanAmount.ResetText();
+            APR.ResetText();
+            LTerm.ResetText();
+            monthlyAmount.ResetText();
+
+        }
+
+        public string CalculateMoPayments()
+        {
+            var lAmount = Convert.ToDecimal(LoanAmount.Text);
+            var aPR = Convert.ToDecimal(APR.Text);
+            var lTerm = Convert.ToInt16(LTerm.Text);
+            //Loan userLoan = new Loan(lAmount, aPR, lTerm);
+
+            // find a way to use object to make calculation 
+
+            Loan usrLoan = new Loan(lAmount, aPR, lTerm);
+            return usrLoan.LoanPayment();
+        }
+
+        private void calculateMonthlyPaymentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CalMoPayPanel.Visible = true;
+        }
+
+        private void contactsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CalMoPayPanel.Visible = false;
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
 
